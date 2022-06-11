@@ -1,0 +1,714 @@
+<!-- Create a simple Program to build the Calculator in JavaScript using with HTML and CSS web languages. -->
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title> Braille Keyboard </title>
+
+<style>
+h1 {
+	text-align: center;
+	padding: 23px;
+	background-color: skyblue;
+	color: white;
+	}
+
+#clear{
+width: 280px;
+border: 3px solid gray;
+	border-radius: 3px;
+	padding: 20px;
+	background-color: red;
+}
+
+.formstyle
+{
+width: 300px;
+height: 530px;
+margin: auto;
+border: 3px solid skyblue;
+border-radius: 5px;
+padding: 20px;
+}
+
+
+
+input
+{
+width: 135px;
+background-color: green;
+color: white;
+border: 3px solid gray;
+	border-radius: 5px;
+	padding: 26px;
+	margin: 5px;
+	font-size: 15px;
+}
+
+
+#calc{
+width: 250px;
+border: 5px solid black;
+	border-radius: 3px;
+	padding: 20px;
+	margin: auto;
+}
+
+</style>
+
+</head>
+<body>
+<h1> Braille Keyboard </h1>
+<div class= "formstyle">
+<form name = "form1">
+	
+  <input id = "calc" type ="text" name = "answer" value=""> <br> <br>
+
+
+  <input id="A1" type = "button" value = "0" onclick = "">
+  <input id="A2" type = "button" value = "0" onclick = "">
+
+  <br> <br>
+  
+  <input id="B1" type = "button" value = "0" onclick = "">
+  <input id="B2" type = "button" value = "0" onclick = "">
+
+  <br> <br>
+  
+  <input id="C1" type = "button" value = "0" onclick = "">
+  <input id="C2" type = "button" value = "0" onclick = "">
+
+  <br> <br>
+
+  <!-- Display the Cancel button and erase all data entered by the user. -->
+  <input type = "button" value = "Enter" onclick = "" id= "clear" >
+  <br> 
+  
+</form>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $(document).keypress(function(e)
+        {
+        	var a1 = document.getElementById("A1").value;
+        	var a2 = document.getElementById("A2").value;
+        	var b1 = document.getElementById("B1").value;
+        	var b2 = document.getElementById("B2").value;
+        	var c1 = document.getElementById("C1").value;
+        	var c2 = document.getElementById("C2").value;
+        	var write = document.getElementById("calc").value;
+            var keynum;
+
+            if(window.event)
+            {                
+                keynum = e.keyCode;
+            }
+                // else if(e.which)
+                //     { 
+                //     // Netscape/Firefox/Opera                   
+                //     keynum = e.which;
+                //     }
+
+           if(keynum == 10 || keynum == 13)
+           {	
+
+               	if(a1==1 && a2==0 && b1==0 && b2==0 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="A";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("A");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==1 && b2==0 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="B";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("B");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==0 && b2==0 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="C";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("C");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==0 && b2==1 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="D";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("D");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==0 && b2==1 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="E";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("E");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==1 && b2==0 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="F";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("F");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==1 && b2==1 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="G";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("G");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==1 && b2==1 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="H";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("H");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==0 && a2==1 && b1==1 && b2==0 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="I";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("I");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==0 && a2==1 && b1==1 && b2==1 && c1==0 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="J";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("J");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==0 && b2==0 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="K";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("K");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==1 && b2==0 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="L";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("L");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==0 && b2==0 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="M";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("M");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==0 && b2==1 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="N";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("N");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==0 && b2==1 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="O";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("O");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==1 && b2==0 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="P";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("P");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==1 && b2==1 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="Q";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("Q");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==1 && b2==1 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="R";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("R");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==0 && a2==1 && b1==1 && b2==0 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="S";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("S");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==0 && a2==1 && b1==1 && b2==1 && c1==1 && c2==0)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="T";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("T");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==0 && b2==0 && c1==1 && c2==1)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="U";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("U");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==1 && b2==0 && c1==1 && c2==1)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="V";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("V");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==0 && a2==1 && b1==1 && b2==1 && c1==0 && c2==1)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="W";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("W");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==0 && b2==0 && c1==1 && c2==1)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="X";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("X");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==1 && b1==0 && b2==1 && c1==1 && c2==1)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="Y";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("Y");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==1 && a2==0 && b1==0 && b2==1 && c1==1 && c2==1)
+               	{
+               		write = document.getElementById("calc").value;
+               		write+="Z";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance("Z");
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+               	else if(a1==0 && a2==0 && b1==0 && b2==0 && c1==0 && c2==0)
+               	{
+
+               		var str = document.getElementById("calc").value;
+
+					const lastWord = str.split(' ').pop();
+					//console.log(lastWord);
+
+               		write = document.getElementById("calc").value;
+               		write+=" ";
+               		document.getElementById("calc").value = write;
+
+
+               		const speach = new SpeechSynthesisUtterance(lastWord);
+		    		[speach.voice] = speechSynthesis.getVoices();
+		    		speechSynthesis.speak(speach);
+
+		    		document.getElementById("A1").value ="0";
+		    		document.getElementById("A2").value ="0";
+		    		document.getElementById("B1").value ="0";
+		    		document.getElementById("B2").value ="0";
+		    		document.getElementById("C1").value ="0";
+		    		document.getElementById("C2").value ="0";
+
+               	}
+
+           	}
+
+           	else
+           	{
+           		if(String.fromCharCode(keynum) =="8"){
+               	document.getElementById("A1").value ="1";
+
+               }
+               else if(String.fromCharCode(keynum) =="9"){
+               	document.getElementById("A2").value ="1";
+               	
+               }
+
+               else if(String.fromCharCode(keynum) =="5"){
+               	document.getElementById("B1").value ="1";
+               	
+               }
+               else if(String.fromCharCode(keynum) =="6"){
+               	document.getElementById("B2").value ="1";
+               	
+               }
+               else if(String.fromCharCode(keynum) =="2"){
+               	document.getElementById("C1").value ="1";
+               	
+               }
+               else if(String.fromCharCode(keynum) =="3"){
+               	document.getElementById("C2").value ="1";
+               	
+               }
+               else{
+               	
+               	const speach = new SpeechSynthesisUtterance("Wrong Input");
+	    		[speach.voice] = speechSynthesis.getVoices();
+	    		speach.rate = 0.5;
+	    		speach.pitch = 0.5;
+	    		speechSynthesis.speak(speach);
+	    		
+               }
+
+           	}
+
+           
+                    // var unicode=e.keyCode? e.keyCode : e.charCode;
+                    // alert(unicode);
+        });
+});  
+
+</script>
+</body>
+</html>
+
+ 
